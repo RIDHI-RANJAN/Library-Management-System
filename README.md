@@ -42,10 +42,12 @@ This is a Library Management System project that includes various modules such a
 - User Login: ridhiranjan007@gmail.com
 - Password: 123456
 
-For a visual representation of the project, refer to the [screenshot](https://github.com/yourusername/yourrepository/blob/main/path/to/screenshot.png) attached.
+For a visual representation of the project, refer to the attached. ![Screenshot (12)](https://github.com/RIDHI-RANJAN/Library-Management-System/assets/85130042/89845300-3af7-45f4-b500-a383f6be0faf)
+
+ 
 
 We're aiming to complete this project by tomorrow.
 
-![Screenshot](https://github.com/yourusername/yourrepository/blob/main/path/to/screenshot.png)
+![Screenshot](https://drive.google.com/file/d/1-Edn1ZJozkbCJKXEh7dnbvGhjfiJXZrc/view?usp=sharing)
 
 Enjoy exploring our Library Management System!
