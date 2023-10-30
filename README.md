@@ -1,5 +1,11 @@
 ### Library Management System
 
+Live: https://ridhi-ranjan.github.io/Library-Management-System/
+#### Login Information
+
+- Admin Login: kk2@gmail.com
+- User Login: ridhiranjan007@gmail.com
+- Password: 123456
 #### Overview
 
 This is a Library Management System project that includes various modules such as Maintenance, Reports, and Transactions.
@@ -36,11 +42,7 @@ This is a Library Management System project that includes various modules such a
 
 - **User Management**: New user creation and existing user management.
 
-#### Login Information
 
-- Admin Login: kk2@gmail.com
-- User Login: ridhiranjan007@gmail.com
-- Password: 123456
 
 For a visual representation of the project, refer to the attached. ![Screenshot (12)](https://github.com/RIDHI-RANJAN/Library-Management-System/assets/85130042/89845300-3af7-45f4-b500-a383f6be0faf)
 
