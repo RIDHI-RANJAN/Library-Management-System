@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Library Management System</h2>
+        <form id="login-form">
+            <label for="user-id">User ID:</label>
+            <input type="text" id="user-id" name="user-id" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <input type="button" value="Login" id="login-button">
+        </form>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js"></script>
+    <script src="script.js"></script>
+</body>
+<script type="module">
+    // Your web app's Firebase configuration
+    import { initializeApp } from "firebase/app";
+    const firebaseConfig = {
+        apiKey: "AIzaSyBlAE0Q9Tqi5H_08fuP7RrTpDBKxISkPjA",
+  authDomain: "authentication-app-3154b.firebaseapp.com",
+  databaseURL: "https://authentication-app-3154b-default-rtdb.firebaseio.com",
+  projectId: "authentication-app-3154b",
+  storageBucket: "authentication-app-3154b.appspot.com",
+  messagingSenderId: "249474056187",
+  appId: "1:249474056187:web:3324f16eb5c4c06f44155e"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+    
+    const loginButton = document.getElementById('login-button');
+    const userIdField = document.getElementById('user-id');
+    const passwordField = document.getElementById('password');
+    
+    loginButton.addEventListener('click', () => {
+        const userId = userIdField.value;
+        const password = passwordField.value;
+        
+        signInWithEmailAndPassword(auth, userId, password)
+          .then((userCredential) => {
+            // User successfully authenticated
+            alert('Login successful!');
+          })
+          .catch((error) => {
+            // Handle login errors
+            alert('Login failed. Please check your credentials.');
+          });
+    });
+</script>
+</html>
