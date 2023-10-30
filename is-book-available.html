@@ -5,84 +5,80 @@
 </head>
 <body>
     <div class="admin-container">
-        <h2>Book Availability</h2>
+        <h2>Transactions</h2>
         <div class="menu">
             <ul>
-                <li><a href="transcations.html">Home</a></li>
+                <li><a href="home.html">Home</a></li>
             </ul>
         </div>
         <div class="book-availability">
-            <h3>Enter Book Name</h3>
-            <input type="text" id="book-name" placeholder="Book Name">
-            <select id="book-category">
-                <option value="Science">Science</option>
-                <option value="Economics">Economics</option>
-                <option value="Fiction">Fiction</option>
-                <option value="Personal Development">Personal Development</option>
+            <h3>Is book available? - Book Availability</h3>
+            <input type="text" id="book-name" placeholder="Enter Book Name">
+            <select id="author-dropdown">
+                <option value="Amit Garg">Amit Garg</option>
+                <option value="Lalit Kumar">Lalit Kumar</option>
+                <option value="Vinay Kumar Singhal">Vinay Kumar Singhal</option>
+                <option value="Sharad Kumar Verma">Sharad Kumar Verma</option>
+                <option value="Gunjan Verma">Gunjan Verma</option>
+                <option value="Saurabh Singhal">Saurabh Singhal</option>
             </select>
-            <h3>Enter Author</h3>
-            <input type="text" id="author" placeholder="Author">
-            <select id="author-category">
-                <option value="Science Author">Science Author</option>
-                <option value="Economics Author">Economics Author</option>
-                <option value="Fiction Author">Fiction Author</option>
-                <option value="Personal Development Author">Personal Development Author</option>
-            </select>
-            <input type="button" value="Check Availability" id="check-availability">
-            <p id="availability-result"></p>
         </div>
-        <div class="issue-book">
-            <h3>Issue book</h3>
-            <input type="text" id="issue-book-name" placeholder="Book Name">
-            <input type="text" id="issue-author-name" placeholder="Author Name">
-            <input type="text" id="issue-serial-number" placeholder="Serial Number">
-            <input type="text" id="issue-available" placeholder="Available">
-            <input type="button" value="Select to issue the book" id="select-issue-book">
-        </div>
-        <div class="return-book">
-            <h3>Return book</h3>
-            <input type="text" id="return-book-name" placeholder="Book Name">
-            <input type="text" id="return-author-name" placeholder="Author Name">
-            <input type="text" id="return-serial-number" placeholder="Serial Number">
-            <input type="radio" id="return-availability" name="return-availability" value="Yes">Y
-            <input type="radio" id="return-availability" name="return-availability" value="No">N
-            <input type="button" value="Submit Return" id="submit-return">
-        </div>
-        <div class="pay-fine">
-            <h3>Pay Fine</h3>
-            <input type="text" id="pay-book-name" placeholder="Book Name">
-            <input type="text" id="pay-author-name" placeholder="Author Name">
-            <input type="radio" id="pay-fine" name="pay-fine" value="Yes">Y
-            <input type="radio" id="pay-fine" name="pay-fine" value="No">N
-            <input type="button" value="Submit Payment" id="submit-payment">
+        <input type="button" value="Search" id="search-button">
+        <div class="results" id="results">
+            <!-- Results will be displayed here -->
         </div>
         <div class="logout">
-            <button id="logout-button">Log Out</button>
+            <a href="index.html">Log Out</a>
         </div>
     </div>
-    <script>
-  // JavaScript code for handling book availability check
-const checkAvailabilityButton = document.getElementById('check-availability');
-const availabilityResult = document.getElementById('availability-result');
-
-checkAvailabilityButton.addEventListener('click', () => {
+    <script src>
+  // JavaScript code for handling the search action
+const searchButton = document.getElementById('search-button');
+searchButton.addEventListener('click', () => {
+    // Get the values entered by the user
     const bookName = document.getElementById('book-name').value;
-    const bookCategory = document.getElementById('book-category').value;
+    const author = document.getElementById('author-dropdown').value;
 
-    if (bookCategory === "Economics") {
-        availabilityResult.innerText = "No Availability";
+    // For the purpose of this example, let's assume the book is found
+    // and display the results
+
+    if (bookName && author) {
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = `
+            <h3>Search Results</h3>
+            <table>
+                <tr>
+                    <th>Title of Book</th>
+                    <th>Author</th>
+                    <th>ISBN No.</th>
+                    <th>Publisher</th>
+                    <th>Year of Publication</th>
+                    <th>Available</th>
+                    <th>Select</th>
+                </tr>
+                <tr>
+                    <td>Introduction to Computer</td>
+                    <td>Amit Garg</td>
+                    <td>978-93-5019-561-1</td>
+                    <td>Reader's Zone</td>
+                    <td>2011</td>
+                    <td>Yes</td>
+                    <td><input type="radio" name="book-select"></td>
+                </tr>
+                <tr>
+                    <td>Publish News Letter</td>
+                    <td>Amit Garg</td>
+                    <td>MCA Department, MIET Meerut</td>
+                    <td>2011</td>
+                    <td>No</td>
+                    <td><input type="radio" name="book-select"></td>
+                </tr>
+                <!-- Add more data here as needed -->
+            </table>`;
     } else {
-        availabilityResult.innerText = "Available";
+        alert('Please enter valid search criteria.');
     }
 });
-
-        // JavaScript code for handling the logout action
-        document.getElementById('logout-button').addEventListener('click', () => {
-            // You can add code to handle the logout process here
-            // For example, redirect the user to a logout page or perform a logout action
-            alert('You have been logged out.');
-            window.location.href = "index.html";
-        });
 </script>
 </body>
 </html>
