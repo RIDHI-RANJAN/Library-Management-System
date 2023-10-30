@@ -11,45 +11,62 @@
                 <li><a href="home.html">Home</a></li>
             </ul>
         </div>
-        <div class="book-availability">
-            <h3> Return Book</h3>
-            <input type="text" id="return-book-name" placeholder="Enter Book Name">
-            <select id="book-category">
-                <option value="Science">Science</option>
-                <option value="Economics">Economics</option>
-                <option value="Fiction">Fiction</option>
-                <option value="Personal Development">Personal Development</option>
-            </select>
-        </div>
         <div class="return-book">
             <h3>Return book</h3>
-            <textarea id="return-author" placeholder="Enter Author"></textarea>
-            <input type="text" id="serial-number" placeholder="Serial No" required>
-            <input type="text" id="issue-date" placeholder="Issue Date">
+            <input type="text" id="return-book-name" placeholder="Enter Book Name">
+            <select id="return-book-category">
+                <option value="Introduction to Computer">Introduction to Computer</option>
+                <option value="Client Server Computing">Client Server Computing</option>
+                <option value="Mobile Computing">Mobile Computing</option>
+                <option value="Data Structure Using C">Data Structure Using C</option>
+            </select>
+        </div>
+        <div class="pay-fine">
+            <h3>Pay Fine</h3>
+            <select id="serial-no">
+                <option value="Serial 001">Serial 001</option>
+                <option value="Serial 002">Serial 002</option>
+                <option value="Serial 003">Serial 003</option>
+            </select>
+            <input type="date" id="issue-date" placeholder="Issue Date">
             <input type="date" id="return-date" placeholder="Return Date">
             <textarea id="remarks" placeholder="Remarks"></textarea>
         </div>
         <input type="button" value="Return Book" id="return-book-button">
+        <input type="button" value="Pay Fine" id="pay-fine-button">
         <div class="logout">
             <button id="logout-button">Log Out</button>
         </div>
     </div>
     <script>
-    // JavaScript code for handling the return book action
+        // JavaScript code for handling the "Return Book" and "Pay Fine" sections
         const returnBookButton = document.getElementById('return-book-button');
+        const payFineButton = document.getElementById('pay-fine-button');
+
         returnBookButton.addEventListener('click', () => {
-            // Get the values entered by the user
             const bookName = document.getElementById('return-book-name').value;
-            const author = document.getElementById('return-author').value;
-            const serialNumber = document.getElementById('serial-number').value;
+            const bookCategory = document.getElementById('return-book-category').value;
+            if (bookName && bookCategory) {
+                // Add code to handle book return
+                alert('Book returned successfully.');
+            } else {
+                alert('Please enter both book name and category.');
+            }
+        });
+
+        payFineButton.addEventListener('click', () => {
+            const serialNo = document.getElementById('serial-no').value;
             const issueDate = document.getElementById('issue-date').value;
             const returnDate = document.getElementById('return-date').value;
-            const remarks = document.getElementById('remarks').value;
-        
-            // You can perform any necessary processing with the entered values here
-            alert(`Book returned successfully:\nBook Name: ${bookName}\nAuthor: ${author}\nSerial No: ${serialNumber}\nIssue Date: ${issueDate}\nReturn Date: ${returnDate}\nRemarks: ${remarks}`);
+
+            if (serialNo && issueDate && returnDate) {
+                // Add code to handle fine payment
+                alert('Fine payment processed.');
+            } else {
+                alert('Please fill in all the required fields.');
+            }
         });
-        
+
         // JavaScript code for handling the logout action
         document.getElementById('logout-button').addEventListener('click', () => {
             // You can add code to handle the logout process here
@@ -57,6 +74,6 @@
             alert('You have been logged out.');
             window.location.href = "index.html";
         });
-        </script>
+    </script>
 </body>
 </html>
